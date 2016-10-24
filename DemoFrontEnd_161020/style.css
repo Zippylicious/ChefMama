@@ -1,4 +1,4 @@
-
+a
 /*
 Design by TEMPLATED
 http://templated.co
@@ -221,6 +221,12 @@ img.aligncenter {
 }
 
 #menu > li.active {
+	background: #174F65;
+	padding: 0px 5px;
+	color: #FFFFFF;
+}
+
+#option{
 	background: #174F65;
 	padding: 0px 5px;
 	color: #FFFFFF;

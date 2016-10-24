@@ -20,6 +20,16 @@ Released   : 20120528
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script type="text/javascript" src="jquery.dropotron-1.0.js"></script>
 <script type="text/javascript" src="jquery.slidertron-1.0.js"></script>
+<script>
+	  
+    function addItem(item){
+    	var li = document.createElement("LI");
+        var input = document.getElementById("btnAdd"+item);
+        li.innerHTML = input.value;
+
+        document.getElementById("Options").appendChild(li);
+    }
+</script>
 </head>
 <body>
 <div id="wrapper">
@@ -35,24 +45,24 @@ Released   : 20120528
 				<li class="current_page_item"><a href="#"><span>Homepage</span></a></li>
 				<li><span>Protein Type</span>
 					<ul>
-						<li class="first"> <a href="Beef">Beef</a> </li>
-						<li> <a href="Pork">Pork</a> </li>
-						<li> <a href="Chicken">Pork</a> </li>
-						<li class="last"> <a href="Tofu">Tofu</a> </li>
+						<li class="first"> <input type="button" id="btnAddBeef" value="Beef" onclick="addItem('Beef')"/></li>
+						<li> <input type="button" id="btnAddChicken" value="Chicken" onclick="addItem('Chicken')"/></li>
+						<li> <input type="button" id="btnAddPork" value="Pork" onclick="addItem('Pork')"/></li>
+						<li class="last"> <input type="button" id="btnAddTofu" value="Tofu" onclick="addItem('Tofu')"/></li> 
 					</ul>
 				</li>
-				<li><span>Cuisien Type</span>
+				<li><span>Cuisine Type</span>
 					<ul>
-						<li class="first"> <a href="Western">Western</a> </li>
-						<li> <a href="Oriental">Oriental</a> </li>
-						<li class="last"> <a href="Mexican">Mexican</a> </li>
+						<li class="first"> <input type="button" id="btnAddAmerican" value="American" onclick="addItem('American')"/> </li>
+						<li><input type="button" id="btnAddOriental" value="Oriental" onclick="addItem('Oriental')"/> </li>
+						<li class="last"> <input type="button" id="btnAddMexican" value="Mexican" onclick="addItem('Mexican')"/> </li>
 					</ul>
 				</li>
 				<li><span>Cuisine Genre</span>
 					<ul>
-						<li class="first"> <a href="Entre">Entre</a> </li>
-						<li> <a href="Side">Side</a> </li>
-						<li class="last"> <a href="Dessert">Dessert</a> </li>
+						<li class="first"> <input type="button" id="btnAddEntree" value="Entree" onclick="addItem('Entree')"/> </li>
+						<li> <input type="button" id="btnAddSide" value="Side" onclick="addItem('Side')"/</li>
+						<li class="last"> <input type="button" id="btnAddDessert" value="Dessert" onclick="addItem('Dessert')"/> </li>
 					</ul>
 				</li>
 				<li><a href="Contact"><span>Contact</span></a></li>
@@ -98,6 +108,7 @@ Released   : 20120528
 			</script> 
 		</div>
 	</div>
+	<ul id="Options">What you've chosen</ul>
 	<!-- end #header -->
 	<form class="form-wrapper">
 		<input type="text" id="search" placeholder="Search for BBQ Ribs, California Roll, Mapo Tofu ..." required>
