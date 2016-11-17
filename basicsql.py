@@ -54,5 +54,5 @@ def add_user(name,passw,em):
 
 
 print(get_users())
-add_user('mammamia','pizzeria','mama@pizza.com')
+#add_user('mammamia','pizzeria','mama@pizza.com')
 print(get_users())
