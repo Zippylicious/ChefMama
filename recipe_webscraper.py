@@ -1,3 +1,5 @@
+#THIS ONLY WORKS FOR ALLRECIPES.COM
+
 #you need to download unirest, beautifulsoup, requests, and json if you dont have them
 #pip install beautifulsoup4 
 #pip install BeautifulSoup
