@@ -27,6 +27,7 @@ user_blueprint = Blueprint('user', __name__,)
 #### routes ####
 ################
 
+#registration endpoint
 @user_blueprint.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegisterForm(request.form)
@@ -46,6 +47,7 @@ def register():
     return render_template('user/register.html', form=form)
 
 
+#login endpoint
 @user_blueprint.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm(request.form)
@@ -70,6 +72,7 @@ def logout():
     return redirect(url_for('user.login'))
 
 
+#user profile endpoint
 @user_blueprint.route('/profile', methods=['GET', 'POST'])
 @login_required
 def profile():
@@ -82,6 +85,7 @@ def profile():
             flash('Password successfully changed.', 'success')
             return redirect(url_for('user.profile'))
         else:
+            #if passwords do not match
             flash('Password change was unsuccessful.', 'danger')
             return redirect(url_for('user.profile'))
     return render_template('user/profile.html', form=form)
